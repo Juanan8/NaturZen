@@ -1,99 +1,87 @@
-/* =================== */
-/* FUENTE Y COLORES BASE */
-/* =================== */
+/* Estilos generales */
 body {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #fdfcf9;
+  background-color: #f9f9f4;
   color: #333;
 }
 
-/* =================== */
-/* HEADER Y NAVEGACIÓN */
-/* =================== */
+/* HEADER */
 header {
-  background-color: #88b04b;
+  background-color: #4caf50;
   color: #fff;
   text-align: center;
-  padding: 3rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 2rem 1rem;
 }
 
 header h1 {
   margin: 0;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 header p {
   margin-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 header nav {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 header nav a {
   color: #fff;
   text-decoration: none;
-  margin: 0 1.2rem;
+  margin: 0 1rem;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 header nav a:hover {
-  color: #eaffd0;
+  color: #e0f2e0;
 }
 
-/* =================== */
 /* SECCIONES GENERALES */
-/* =================== */
 section {
   padding: 3rem 1rem;
-  max-width: 960px;
+  max-width: 900px;
   margin: auto;
 }
 
 section h2 {
-  color: #6b8e23;
+  color: #4caf50;
   font-size: 2.2rem;
-  border-bottom: 2px solid #dcefd9;
+  border-bottom: 2px solid #e0f2e0;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
 
-/* =================== */
-/* ARTÍCULOS (BLOG) */
-/* =================== */
+/* BLOG / ARTÍCULOS */
 article {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 2rem;
-  margin-bottom: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
 article:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 article h3 {
   font-size: 2rem;
-  color: #88b04b;
+  color: #4caf50;
   margin-bottom: 1.5rem;
 }
 
 article h4 {
-  font-size: 1.3rem;
-  color: #466d1d;
+  font-size: 1.4rem;
+  color: #2c5f2d;
   margin-top: 1.5rem;
 }
 
@@ -104,57 +92,46 @@ article p {
 }
 
 article strong {
-  color: #2e4c16;
+  color: #2c5f2d;
 }
 
-/* =================== */
-/* PRODUCTOS / AFILIADOS */
-/* =================== */
+/* RECOMENDACIONES */
 .producto {
   background-color: #ffffff;
   padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .producto:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
 }
 
 .producto img {
   max-width: 200px;
   margin-bottom: 1rem;
-  border-radius: 10px;
-}
-
-.producto p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
 }
 
 .producto a {
   display: inline-block;
   margin-top: 1rem;
-  background-color: #6b8e23;
+  background-color: #4caf50;
   color: white;
   padding: 0.8rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
 
 .producto a:hover {
-  background-color: #557a1f;
+  background-color: #3e8e41;
 }
 
-/* =================== */
 /* FORMULARIO DE CONTACTO */
-/* =================== */
 form {
   display: flex;
   flex-direction: column;
@@ -163,34 +140,33 @@ form {
   margin: auto;
 }
 
-form input, form textarea {
-  padding: 0.9rem;
-  border-radius: 6px;
+form input,
+form textarea {
+  padding: 0.8rem;
+  border-radius: 5px;
   border: 1px solid #ccc;
   font-family: inherit;
   font-size: 1rem;
 }
 
 form button {
-  background-color: #88b04b;
+  background-color: #4caf50;
   color: white;
-  padding: 0.9rem;
+  padding: 0.8rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 form button:hover {
-  background-color: #6b8e23;
+  background-color: #3e8e41;
 }
 
-/* =================== */
 /* FOOTER */
-/* =================== */
 footer {
-  background-color: #eef5ea;
+  background-color: #e0f2e0;
   text-align: center;
   padding: 2rem 1rem;
   font-size: 1rem;
@@ -201,12 +177,10 @@ footer p {
   margin: 0;
 }
 
-/* =================== */
-/* RESPONSIVE DESIGN */
-/* =================== */
-@media (max-width: 768px) {
+/* RESPONSIVE */
+@media (max-width: 600px) {
   header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   header nav a {
@@ -215,7 +189,7 @@ footer p {
   }
 
   .producto img {
-    max-width: 90%;
+    max-width: 80%;
   }
 
   section h2 {
@@ -224,9 +198,5 @@ footer p {
 
   form {
     max-width: 100%;
-  }
-
-  article {
-    padding: 1.5rem;
   }
 }
