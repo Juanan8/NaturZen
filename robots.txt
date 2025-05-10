@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://juanan8.github.io/NaturZen/sitemap.xml
