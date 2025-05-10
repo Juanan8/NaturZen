@@ -247,3 +247,31 @@ footer p {
 .boton-blog:hover {
   background-color: #388e3c;
 }
+/* Ajustes adicionales para responsive mejorado */
+@media (max-width: 768px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  header nav a {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+  }
+
+  .producto {
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .boton-blog {
+    width: 90%;
+    text-align: center;
+  }
+}
