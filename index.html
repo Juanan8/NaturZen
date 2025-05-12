@@ -85,41 +85,67 @@
     <p>&copy; 2025 NaturZen - Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-// Crear una cookie
+  <!-- Aviso de cookies estilo NaturZen -->
+<div id="aviso-cookies" style="
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+">
+  Este sitio utiliza cookies para mejorar tu experiencia. 
+  <button onclick="aceptarCookies()" style="
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #66bb6a;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  " onmouseover="this.style.backgroundColor='#4caf50'" onmouseout="this.style.backgroundColor='#66bb6a'">
+    Aceptar
+  </button>
+</div>
+
+<script>
+// Crear cookie
 function setCookie(nombre, valor, dias) {
-    let fecha = new Date();
-    fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
-    let expiracion = "expires=" + fecha.toUTCString();
-    document.cookie = nombre + "=" + valor + ";" + expiracion + ";path=/";
+  const d = new Date();
+  d.setTime(d.getTime() + (dias*24*60*60*1000));
+  const expiracion = "expires=" + d.toUTCString();
+  document.cookie = nombre + "=" + valor + ";" + expiracion + ";path=/";
 }
 
-// Leer una cookie
+// Leer cookie
 function getCookie(nombre) {
-    let nombreEQ = nombre + "=";
-    let cookies = document.cookie.split(';');
-    for(let i = 0; i < cookies.length; i++) {
-        let c = cookies[i].trim();
-        if (c.indexOf(nombreEQ) == 0) return c.substring(nombreEQ.length);
-    }
-    return null;
+  const nombreEQ = nombre + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(nombreEQ) === 0) return c.substring(nombreEQ.length);
+  }
+  return null;
 }
 
-// Verificar si existe la cookie y si no, la crea
-function checkCookie() {
-    let usuario = getCookie("usuario");
-    if (usuario != null) {
-        alert("¡Hola de nuevo, " + usuario + "!");
-    } else {
-        usuario = prompt("Por favor, ingresa tu nombre:");
-        if (usuario != "" && usuario != null) {
-            setCookie("usuario", usuario, 7); // 7 días
-        }
-    }
+// Ocultar aviso si ya se aceptó
+window.onload = function() {
+  if (getCookie("cookies_aceptadas") === "true") {
+    document.getElementById("aviso-cookies").style.display = "none";
+  }
 }
 
-// Llamar a la función cuando cargue la página
-checkCookie();
+function aceptarCookies() {
+  setCookie("cookies_aceptadas", "true", 365);
+  document.getElementById("aviso-cookies").style.display = "none";
+}
 </script>
 </body>
 </html>
