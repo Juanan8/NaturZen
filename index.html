@@ -84,5 +84,42 @@
   <footer>
     <p>&copy; 2025 NaturZen - Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+// Crear una cookie
+function setCookie(nombre, valor, dias) {
+    let fecha = new Date();
+    fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
+    let expiracion = "expires=" + fecha.toUTCString();
+    document.cookie = nombre + "=" + valor + ";" + expiracion + ";path=/";
+}
+
+// Leer una cookie
+function getCookie(nombre) {
+    let nombreEQ = nombre + "=";
+    let cookies = document.cookie.split(';');
+    for(let i = 0; i < cookies.length; i++) {
+        let c = cookies[i].trim();
+        if (c.indexOf(nombreEQ) == 0) return c.substring(nombreEQ.length);
+    }
+    return null;
+}
+
+// Verificar si existe la cookie y si no, la crea
+function checkCookie() {
+    let usuario = getCookie("usuario");
+    if (usuario != null) {
+        alert("¡Hola de nuevo, " + usuario + "!");
+    } else {
+        usuario = prompt("Por favor, ingresa tu nombre:");
+        if (usuario != "" && usuario != null) {
+            setCookie("usuario", usuario, 7); // 7 días
+        }
+    }
+}
+
+// Llamar a la función cuando cargue la página
+checkCookie();
+</script>
 </body>
 </html>
