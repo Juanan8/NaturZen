@@ -275,3 +275,23 @@ footer p {
     text-align: center;
   }
 }
+/* Animación al cargar la página */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 0.6s ease-in-out;
+}
+.contacto-info {
+  /* Este bloque ya no se usa */
+}
+
+.contacto-info p {
+  /* Este también */
+}
+
+.contacto-info a {
+  /* Este también */
+}
