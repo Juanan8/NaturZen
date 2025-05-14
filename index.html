@@ -47,12 +47,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header>
     <h1>NaturZen</h1>
     <p>Tu espacio para descubrir remedios naturales y bienestar consciente</p>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="blog.html">Blog</a>
-      <a href="#recomendaciones">Recomendaciones</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+  <nav>
+  <a href="index.html#inicio">Inicio</a>
+  <a href="blog.html">Blog</a>
+  <a href="index.html#recomendaciones">Recomendaciones</a>
+  <a href="sobre-nosotros.html">Sobre nosotros</a>
+  <a href="index.html#contacto">Contacto</a>
+</nav>
+
   </header>
 
   <section id="inicio">
@@ -82,15 +84,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes dudas o sugerencias? Escríbeme:</p>
+ <section id="contacto">
+  <h2>📬 Contacto</h2>
+  <p>¿Tienes dudas, sugerencias o quieres contarnos algo? ¡Estamos encantados de escucharte!</p>
+
+  <div class="contacto-contenedor">
     <form action="https://formspree.io/f/tu-id-aqui" method="POST">
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="message" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <textarea name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit">Enviar mensaje</button>
     </form>
-  </section>
+  </div>
+</section>
 
   <footer>
     <p>&copy; 2025 NaturZen - Todos los derechos reservados.</p>
