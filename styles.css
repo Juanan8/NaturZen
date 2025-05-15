@@ -295,3 +295,94 @@ body {
 .contacto-info a {
   /* Este también */
 }
+/* Estilo para el contenedor de recomendaciones */
+#recomendaciones {
+  max-width: 960px;
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+/* Títulos */
+#recomendaciones h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: #4caf50;
+}
+
+#recomendaciones h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #388e3c;
+  font-weight: 600;
+}
+
+/* Contenedor de productos */
+#recomendaciones .producto {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+#recomendaciones .producto:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen del producto */
+#recomendaciones .producto img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Texto dentro del producto */
+#recomendaciones .producto p {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Enlace botón */
+#recomendaciones .producto a {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+#recomendaciones .producto a:hover {
+  background-color: #388e3c;
+}
+
+/* Responsive: en móviles los productos apilan verticalmente */
+@media (max-width: 600px) {
+  #recomendaciones .producto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #recomendaciones .producto img {
+    width: 100%;
+    height: auto;
+  }
+
+  #recomendaciones .producto a {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.8rem;
+  }
+}
