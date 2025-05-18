@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://juanan8.github.io/NaturZen/sitemap_new.xml
