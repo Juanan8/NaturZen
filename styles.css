@@ -1,17 +1,36 @@
-/* Estilos generales */
+/* Estilo base conservado, con mejoras de animaciones, responsive y botón 'Leer más' */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --primary: #4caf50;
+  --primary-dark: #3e8e41;
+  --accent: #2c5f2d;
+  --bg: #f4f9f4;
+  --text: #333;
+  --white: #fff;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
   margin: 0;
   padding: 0;
-  background-color: #f4f9f4;
-  color: #333;
+  line-height: 1.6;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 header {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
               url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
-  color: #fff;
+  color: var(--white);
   text-align: center;
   padding: 4rem 1rem;
 }
@@ -29,12 +48,15 @@ header p {
 
 header nav {
   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 header nav a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
-  margin: 0 1.5rem;
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease;
@@ -49,65 +71,87 @@ section {
   padding: 3rem 1rem;
   max-width: 900px;
   margin: auto;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 section h2 {
-  color: #4caf50;
+  color: var(--primary);
   font-size: 2.2rem;
   border-bottom: 2px solid #e0f2e0;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
 
-article {
-  background-color: #fff;
+article, .blog-card, .producto {
+  background-color: var(--white);
   padding: 2rem;
   margin-bottom: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
 }
 
-article h3 {
+article:hover, .blog-card:hover, .producto:hover {
+  transform: translateY(-5px);
+}
+
+article h3, .blog-card h3 {
   font-size: 2rem;
-  color: #4caf50;
+  color: var(--primary);
   margin-bottom: 1.5rem;
 }
 
-article h4 {
+article h4, .blog-card h4 {
   font-size: 1.4rem;
-  color: #2c5f2d;
+  color: var(--accent);
   margin-top: 1.5rem;
 }
 
-article p {
+article p, .blog-card p, .producto p {
   font-size: 1rem;
   color: #555;
   margin-bottom: 1.5rem;
 }
 
-article strong {
-  color: #2c5f2d;
+/* Botón Leer más */
+.boton-blog {
+  display: inline-block;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.producto {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.boton-blog:hover {
+  background-color: var(--primary-dark);
 }
 
 .producto img {
   max-width: 200px;
   margin-bottom: 1rem;
+  border-radius: var(--radius);
 }
 
 .producto a {
   display: inline-block;
   margin-top: 1rem;
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
   text-decoration: none;
@@ -116,7 +160,7 @@ article strong {
 }
 
 .producto a:hover {
-  background-color: #3e8e41;
+  background-color: var(--primary-dark);
 }
 
 form {
@@ -136,8 +180,8 @@ form input, form textarea {
 }
 
 form button {
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
   padding: 0.8rem;
   border: none;
   border-radius: 5px;
@@ -147,7 +191,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #3e8e41;
+  background-color: var(--primary-dark);
 }
 
 footer {
@@ -162,152 +206,18 @@ footer p {
   margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
-
-  header nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-
-  .producto img {
-    max-width: 80%;
-  }
-
-  section h2 {
-    font-size: 2rem;
-  }
-
-  form {
-    max-width: 100%;
-  }
-}
-
-/* Blog Container */
-.blog-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 3rem 1rem;
-}
-
-.blog-card {
-  background-color: #fff;
-  margin-bottom: 2rem;
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  animation: fadeInUp 0.6s ease-in-out;
-}
-
-.blog-card h3 {
-  font-size: 2rem;
-  color: #4caf50;
-  margin-bottom: 1rem;
-}
-
-.blog-card h4 {
-  font-size: 1.2rem;
-  color: #2c5f2d;
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.blog-card p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.boton-blog {
-  display: inline-block;
-  background-color: #4caf50;
-  color: white;
-  padding: 0.9rem 1.8rem;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.boton-blog:hover {
-  background-color: #388e3c;
-}
-/* Ajustes adicionales para responsive mejorado */
-@media (max-width: 768px) {
-  header nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  header nav a {
-    margin: 0.4rem 0;
-    font-size: 1rem;
-  }
-
-  .producto {
-    margin: 1rem auto;
-    max-width: 90%;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  .boton-blog {
-    width: 90%;
-    text-align: center;
-  }
-}
-/* Animación al cargar la página */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-body {
-  animation: fadeIn 0.6s ease-in-out;
-}
-.contacto-info {
-  /* Este bloque ya no se usa */
-}
-
-.contacto-info p {
-  /* Este también */
-}
-
-.contacto-info a {
-  /* Este también */
-}
-/* Estilo para el contenedor de recomendaciones */
+/* Recomendaciones estilo original */
 #recomendaciones {
   max-width: 960px;
   margin: 0 auto 4rem auto;
   padding: 0 1rem;
 }
 
-/* Títulos */
 #recomendaciones h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 700;
-  color: #4caf50;
+  color: var(--primary);
 }
 
 #recomendaciones h3 {
@@ -317,11 +227,10 @@ body {
   font-weight: 600;
 }
 
-/* Contenedor de productos */
 #recomendaciones .producto {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: 1rem;
   margin-bottom: 1.5rem;
   display: flex;
@@ -334,7 +243,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* Imagen del producto */
 #recomendaciones .producto img {
   width: 120px;
   height: 120px;
@@ -343,18 +251,16 @@ body {
   flex-shrink: 0;
 }
 
-/* Texto dentro del producto */
 #recomendaciones .producto p {
   flex: 1;
   font-size: 1rem;
-  color: #333;
+  color: var(--text);
   margin: 0;
 }
 
-/* Enlace botón */
 #recomendaciones .producto a {
-  background-color: #4caf50;
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--white);
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   font-weight: 600;
@@ -365,11 +271,42 @@ body {
 }
 
 #recomendaciones .producto a:hover {
-  background-color: #388e3c;
+  background-color: var(--primary-dark);
 }
 
-/* Responsive: en móviles los productos apilan verticalmente */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  header nav a {
+    font-size: 1rem;
+  }
+
+  .producto {
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  .boton-blog {
+    width: 90%;
+    text-align: center;
+  }
+
   #recomendaciones .producto {
     flex-direction: column;
     align-items: flex-start;
