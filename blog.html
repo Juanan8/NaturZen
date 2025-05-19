@@ -36,6 +36,13 @@
   <section class="blog-container">
     <h2>Artículos completos</h2>
 
+<div class="buscador-blog">
+  <input type="text" id="busqueda" placeholder="Buscar en el blog..." />
+  <div id="mensaje-no-resultados" style="display: none; color: #888; font-size: 1rem; margin-top: 1rem;">
+    No se encontraron resultados.
+  </div>
+</div>
+
     <article class="blog-card">
       <h3>1. Infusión de jengibre, miel y limón: el clásico que nunca falla</h3>
       <p>El jengibre, la miel y el limón forman uno de los remedios caseros más populares y efectivos, especialmente durante las épocas frías del año. Esta combinación milenaria no solo es reconfortante, sino que está cargada de propiedades terapéuticas que ayudan a aliviar síntomas del resfriado, fortalecer el sistema inmunológico y mejorar la digestión.</p>
@@ -96,7 +103,7 @@
     </article>
   </section>
 
-<section id="guia-bienestar">
+<section id="guia-bienestar" class="seccion-guia">
   <h2>🌱 Guías completas de salud natural</h2>
   <p>Artículos detallados para profundizar en temas clave del bienestar natural, elaborados con criterio y enfoque responsable.</p>
 
@@ -123,6 +130,34 @@
     <p>Las infusiones herbales son una alternativa eficaz y natural para mejorar la calidad del sueño. Siempre se recomienda consultar con un profesional de la salud antes de iniciar cualquier tratamiento, especialmente si se combinan con medicación o se padecen trastornos crónicos. Integrar estas plantas en la rutina nocturna puede ser un primer paso hacia un descanso más reparador y saludable.</p>
   </article>
 </section>
+
+<script>
+  const inputBusqueda = document.getElementById("busqueda");
+  const tarjetas = document.querySelectorAll(".blog-card");
+  const mensaje = document.getElementById("mensaje-no-resultados");
+  const seccionGuia = document.querySelector(".seccion-guia");
+
+  inputBusqueda.addEventListener("input", () => {
+    const texto = inputBusqueda.value.toLowerCase();
+    let visibles = 0;
+
+    tarjetas.forEach((tarjeta) => {
+      const contenido = tarjeta.textContent.toLowerCase();
+      if (contenido.includes(texto)) {
+        tarjeta.classList.remove("oculto");
+        visibles++;
+      } else {
+        tarjeta.classList.add("oculto");
+      }
+    });
+
+    // Mostrar u ocultar mensaje
+    mensaje.style.display = visibles === 0 ? "block" : "none";
+
+    // Ocultar la sección de guías si no hay resultados
+    seccionGuia.style.display = visibles === 0 ? "none" : "block";
+  });
+</script>
 
   <footer>
     <p>&copy; 2025 NaturZen - Todos los derechos reservados.</p>
