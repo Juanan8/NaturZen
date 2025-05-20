@@ -44,18 +44,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRF2SFV8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <h1>NaturZen</h1>
-    <p>Tu espacio para descubrir remedios naturales y bienestar consciente</p>
-  <nav>
-  <a href="index.html#inicio">Inicio</a>
-  <a href="blog.html">Blog</a>
-  <a href="index.html#recomendaciones">Recomendaciones</a>
-  <a href="sobre-nosotros.html">Sobre nosotros</a>
-  <a href="index.html#contacto">Contacto</a>
-</nav>
 
-  </header>
+ <header>
+  <div class="contenedor-header">
+    <h1><span class="icono-hoja">🌿</span> NaturZen</h1>
+    <p>Remedios naturales y bienestar consciente para tu día a día</p>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="blog.html">Blog</a>
+      <a href="#recomendaciones">Recomendaciones</a>
+      <a href="sobre-nosotros.html">Sobre nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
 
   <section id="inicio">
     <h2>Remedios Naturales, Infusiones y Consejos para tu Bienestar Diario</h2>
@@ -138,16 +141,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
- <section id="contacto">
+<section id="contacto">
   <h2>📬 Contacto</h2>
   <p>¿Tienes dudas, sugerencias o quieres contarnos algo? ¡Estamos encantados de escucharte!</p>
 
   <div class="contacto-contenedor">
-    <form action="https://formspree.io/f/tu-id-aqui" method="POST">
+    <form id="formulario-contacto" action="https://formspree.io/f/xvgaydbn" method="POST">
       <input type="text" name="name" placeholder="Tu nombre" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
       <textarea name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
       <button type="submit">Enviar mensaje</button>
+      <p class="mensaje-exito" id="mensaje-exito" style="display: none;">✅ ¡Mensaje enviado con éxito!</p>
     </form>
   </div>
 </section>
