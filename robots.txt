@@ -2,5 +2,4 @@ User-agent: *
 Disallow: /private/
 Disallow: /admin/
 Allow: /public/
-Disallow: /sitemap_new.xml/
 Sitemap: https://juanan8.github.io/NaturZen/sitemap_new.xml
