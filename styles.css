@@ -465,4 +465,137 @@ form button:hover {
   font-weight: 600;
   margin-top: 1rem;
 }
+/* Ícono de Instagram fijo en el header */
+.contenedor-header {
+  position: relative;
+}
 
+.instagram-link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: inline-block;
+  z-index: 10;
+}
+
+.instagram-link img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1); /* Asegura que se vea blanco */
+}
+
+.instagram-link img:hover {
+  transform: scale(1.15);
+}
+/* 🌙 MODO OSCURO AUTOMÁTICO */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1b1f23;
+    color: #f4f4f4;
+  }
+
+  header,
+  footer {
+    background-color: #22282d;
+    color: #f4f4f4;
+  }
+
+  nav a {
+    color: #f4f4f4;
+  }
+
+  nav a:hover {
+    color: #9be3a7;
+  }
+
+  section {
+    background-color: transparent;
+  }
+
+  h1, h2, h3, p, strong, label {
+    color: #f4f4f4;
+  }
+
+  .subtitulo-recomendacion {
+    color: #9be3a7;
+  }
+
+  /* 🌿 PRODUCTOS Y ARTÍCULOS CON FONDO SUAVE */
+  .producto {
+    background-color: #2f353a;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    border: none;
+  }
+
+  .producto p,
+  .producto strong {
+    color: #f0f0f0;
+  }
+
+  .producto a {
+    color: #9be3a7;
+  }
+
+  .producto a:hover {
+    color: #c5f7cc;
+  }
+
+  .boton-blog,
+  button {
+    background-color: #3c4631;
+    color: #f4f4f4;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .boton-blog:hover,
+  button:hover {
+    background-color: #4f5c40;
+  }
+
+  input,
+  textarea {
+    background-color: #2b2f33;
+    color: #fff;
+    border: 1px solid #444;
+  }
+
+  .contacto-contenedor {
+    background-color: #2f353a;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  footer {
+    background-color: #1a1f24;
+    color: #ccc;
+  }
+
+  a {
+    color: #9be3a7;
+  }
+
+  a:hover {
+    color: #c5f7cc;
+  }
+
+  /* 📝 ARTÍCULOS DE BLOG (si usas tarjetas) */
+  .articulo-blog {
+    background-color: #2f353a;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    color: #f0f0f0;
+  }
+}
+
+/* 🎯 Transiciones suaves para todos los elementos */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
