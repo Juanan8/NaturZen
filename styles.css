@@ -1,4 +1,4 @@
-/* Estilo base conservado, con mejoras de animaciones, responsive y botón 'Leer más' */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 :root {
@@ -38,27 +38,37 @@ body {
   }
 }
 
+/* === HEADER === */
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
               url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')
               no-repeat center/cover;
   color: #fff;
   padding: 4rem 1rem 3rem;
-  text-align: center;
 }
 
+/* Layout horizontal del header */
 .contenedor-header {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-header h1 {
-  font-size: 3rem;
+.logo-header {
+  flex: 1;
+  min-width: 220px;
+}
+
+.logo-header h1 {
+  font-size: 2.6rem;
   margin: 0;
   font-weight: 700;
   letter-spacing: 1px;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
@@ -67,32 +77,52 @@ header h1 {
   font-size: 1.6rem;
 }
 
-header p {
-  margin-top: 1rem;
-  font-size: 1.3rem;
+.logo-header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
   font-weight: 300;
 }
 
-header nav {
-  margin-top: 2.5rem;
+/* Navegación */
+.menu-header {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 2;
 }
 
-header nav a {
-  color: #fff;
+.menu-header a {
   text-decoration: none;
+  color: #fff;
   font-weight: 600;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
-header nav a:hover {
+.menu-header a:hover {
   color: #a5d6a7;
 }
 
+/* Instagram */
+.redes-header {
+  flex: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.instagram-link img {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.instagram-link img:hover {
+  transform: scale(1.15);
+}
+
+/* === SECCIONES === */
 section {
   animation: fadeInUp 0.6s ease-in-out;
   margin: auto;
@@ -108,6 +138,7 @@ section h2 {
   padding-bottom: 1rem;
 }
 
+/* === PRODUCTOS Y BLOG === */
 article, .blog-card, .producto {
   background-color: var(--white);
   border-radius: var(--radius);
@@ -139,6 +170,7 @@ article p, .blog-card p, .producto p {
   margin-bottom: 1.5rem;
 }
 
+/* Botón blog */
 .boton-blog {
   background-color: var(--primary);
   border-radius: 6px;
@@ -155,6 +187,7 @@ article p, .blog-card p, .producto p {
   background-color: var(--primary-dark);
 }
 
+/* Producto */
 .producto img {
   border-radius: var(--radius);
   margin-bottom: 1rem;
@@ -177,50 +210,7 @@ article p, .blog-card p, .producto p {
   background-color: var(--primary-dark);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: auto;
-  max-width: 500px;
-}
-
-form input,
-form textarea {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.8rem;
-}
-
-form button {
-  background-color: var(--primary);
-  border: none;
-  border-radius: 5px;
-  color: var(--white);
-  cursor: pointer;
-  font-weight: bold;
-  padding: 0.8rem;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: var(--primary-dark);
-}
-
-footer {
-  background-color: #e0f2e0;
-  color: #555;
-  font-size: 1rem;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-footer p {
-  margin: 0;
-}
-
+/* Recomendaciones específicas */
 #recomendaciones {
   margin: 0 auto 4rem auto;
   max-width: 960px;
@@ -305,116 +295,7 @@ footer p {
   padding-left: 1rem;
 }
 
-.buscador-blog {
-  margin: 0 auto 3rem;
-  max-width: 500px;
-  position: relative;
-  text-align: center;
-}
-
-.buscador-blog input {
-  background-color: #fff;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
-  background-position: 1rem center;
-  background-repeat: no-repeat;
-  background-size: 18px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 1rem 1.2rem 1rem 2.5rem;
-  transition: all 0.3s ease;
-  width: 100%;
-}
-
-.buscador-blog input:focus {
-  border-color: #4caf50;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-  outline: none;
-}
-
-.blog-card {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.blog-card.oculto {
-  height: 0;
-  margin: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding: 0;
-  pointer-events: none;
-  transform: scale(0.98);
-}
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
-
-  header nav {
-    align-items: center;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  header nav a {
-    font-size: 1rem;
-  }
-
-  .producto {
-    margin: 1rem auto;
-    max-width: 90%;
-  }
-
-  section {
-    padding: 2rem 1rem;
-  }
-
-  form {
-    max-width: 100%;
-  }
-
-  .boton-blog {
-    text-align: center;
-    width: 90%;
-  }
-
-  #recomendaciones .producto {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  #recomendaciones .producto img {
-    height: auto;
-    width: 100%;
-  }
-
-  #recomendaciones .producto a {
-    margin-top: 0.8rem;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  #recomendaciones .producto {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  #recomendaciones .producto img {
-    height: auto;
-    width: 100%;
-  }
-
-  #recomendaciones .producto a {
-    margin-top: 1rem;
-    text-align: center;
-    width: 100%;
-  }
-}
+/* === FORMULARIO === */
 form {
   display: flex;
   flex-direction: column;
@@ -465,137 +346,89 @@ form button:hover {
   font-weight: 600;
   margin-top: 1rem;
 }
-/* Ícono de Instagram fijo en el header */
-.contenedor-header {
+
+/* === FOOTER === */
+footer {
+  background-color: #e0f2e0;
+  color: #555;
+  font-size: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .contenedor-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-header {
+    justify-content: center;
+  }
+
+  .redes-header {
+    justify-content: center;
+  }
+
+  .boton-blog {
+    text-align: center;
+    width: 90%;
+  }
+
+  #recomendaciones .producto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #recomendaciones .producto img {
+    width: 100%;
+    height: auto;
+  }
+
+  #recomendaciones .producto a {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.8rem;
+  }
+}
+.buscador-blog {
+  margin: 0 auto 3rem;
+  max-width: 500px;
+  text-align: center;
   position: relative;
 }
 
-.instagram-link {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: inline-block;
-  z-index: 10;
+.buscador-blog input {
+  width: 100%;
+  padding: 1rem 1.2rem 1rem 2.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fff;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 1rem center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.instagram-link img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1); /* Asegura que se vea blanco */
+.buscador-blog input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
-.instagram-link img:hover {
-  transform: scale(1.15);
-}
-/* 🌙 MODO OSCURO AUTOMÁTICO */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #1b1f23;
-    color: #f4f4f4;
-  }
-
-  header,
-  footer {
-    background-color: #22282d;
-    color: #f4f4f4;
-  }
-
-  nav a {
-    color: #f4f4f4;
-  }
-
-  nav a:hover {
-    color: #9be3a7;
-  }
-
-  section {
-    background-color: transparent;
-  }
-
-  h1, h2, h3, p, strong, label {
-    color: #f4f4f4;
-  }
-
-  .subtitulo-recomendacion {
-    color: #9be3a7;
-  }
-
-  /* 🌿 PRODUCTOS Y ARTÍCULOS CON FONDO SUAVE */
-  .producto {
-    background-color: #2f353a;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    border: none;
-  }
-
-  .producto p,
-  .producto strong {
-    color: #f0f0f0;
-  }
-
-  .producto a {
-    color: #9be3a7;
-  }
-
-  .producto a:hover {
-    color: #c5f7cc;
-  }
-
-  .boton-blog,
-  button {
-    background-color: #3c4631;
-    color: #f4f4f4;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-  }
-
-  .boton-blog:hover,
-  button:hover {
-    background-color: #4f5c40;
-  }
-
-  input,
-  textarea {
-    background-color: #2b2f33;
-    color: #fff;
-    border: 1px solid #444;
-  }
-
-  .contacto-contenedor {
-    background-color: #2f353a;
-    padding: 1rem;
-    border-radius: 12px;
-  }
-
-  footer {
-    background-color: #1a1f24;
-    color: #ccc;
-  }
-
-  a {
-    color: #9be3a7;
-  }
-
-  a:hover {
-    color: #c5f7cc;
-  }
-
-  /* 📝 ARTÍCULOS DE BLOG (si usas tarjetas) */
-  .articulo-blog {
-    background-color: #2f353a;
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    color: #f0f0f0;
-  }
-}
-
-/* 🎯 Transiciones suaves para todos los elementos */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease;
+#mensaje-no-resultados {
+  display: none;
+  color: #888;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
