@@ -3,3 +3,4 @@ Disallow: /private/
 Disallow: /admin/
 Allow: /public/
 Sitemap: https://juanan8.github.io/NaturZen/sitemap.xml
+c
