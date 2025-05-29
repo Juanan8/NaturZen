@@ -432,3 +432,39 @@ footer p {
   font-size: 1rem;
   margin-top: 1rem;
 }
+/* BOTONES MODERNOS Y REDONDEADOS */
+button,
+.boton-blog,
+.boton-hero,
+.producto a,
+form button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+button:hover,
+.boton-blog:hover,
+.boton-hero:hover,
+.producto a:hover,
+form button:hover {
+  background-color: #388e3c;
+  transform: scale(1.04);
+}
+
+button:active,
+.boton-blog:active,
+.boton-hero:active,
+.producto a:active,
+form button:active {
+  transform: scale(0.98);
+}
