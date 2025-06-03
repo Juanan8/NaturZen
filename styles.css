@@ -468,3 +468,75 @@ button:active,
 form button:active {
   transform: scale(0.98);
 }
+/* INICIO NATURAL, SUELTO Y PROFESIONAL */
+.inicio-natural {
+  padding: 6rem 2rem 4rem;
+  background-color: #f4f9f4; /* unificado con el fondo general del sitio */
+  max-width: 1200px;
+  margin: auto;
+}
+
+.inicio-natural h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.descripcion-principal {
+  font-size: 1.25rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.pilares-naturzen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.pilar {
+  flex: 1 1 300px;
+  padding-right: 1rem;
+}
+
+.pilar h3 {
+  font-size: 1.4rem;
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+.pilar p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inicio-natural h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .descripcion-principal {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .pilares-naturzen {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .pilar {
+    text-align: center;
+    padding: 0;
+  }
+}
